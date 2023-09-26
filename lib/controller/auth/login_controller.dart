@@ -3,7 +3,6 @@ import 'package:delivery/core/constant/routes.dart';
 import 'package:delivery/core/functions/handlingdata.dart';
 import 'package:delivery/core/services/services.dart';
 import 'package:delivery/data/datasource/remote/auth/login.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -49,8 +48,8 @@ class LoginControllerImp extends LoginController {
             myServices.sharedPreferences
                 .setString("phone", response['data']['users_phone'].toString());
             myServices.sharedPreferences.setString("step", "2");
-            FirebaseMessaging.instance.subscribeToTopic("users");
-            FirebaseMessaging.instance.subscribeToTopic("users$userid");
+            // FirebaseMessaging.instance.subscribeToTopic("users");
+            // FirebaseMessaging.instance.subscribeToTopic("users$userid");
             //data.addAll(response['data']);
             Get.offNamed(AppRoute.homepage);
           } else {
@@ -79,10 +78,10 @@ class LoginControllerImp extends LoginController {
 
   @override
   void onInit() {
-    FirebaseMessaging.instance.getToken().then((value) {
-      String? token = value;
-      print(token);
-    });
+    // FirebaseMessaging.instance.getToken().then((value) {
+    //   String? token = value;
+    //   print(token);
+    // });
     email = TextEditingController();
     password = TextEditingController();
     super.onInit();

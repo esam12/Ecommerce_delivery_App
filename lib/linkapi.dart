@@ -1,19 +1,20 @@
 class AppLinkApi {
-  static const String server = "http://192.168.1.105/ecommerce/";
+  static const String server = "http://192.168.1.106/ecommerce/";
   static const String imagestatic = "assets/images";
   static const String imagestItems = "$imagestatic/items";
 
   // auth
 
-  static const String signup = "$server/auth/signup.php";
-  static const String authVerifycode = "$server/auth/verifycode.php";
-  static const String login = "$server/auth/login.php";
-  static const String checkemail = "$server/forgetpassword/checkemail.php";
+  static const String authVerifycode = "$server/delivery/auth/verifycode.php";
+  static const String login = "$server/delivery/auth/login.php";
+  static const String signup = "$server/delivery/auth/signup.php";
+  static const String checkemail =
+      "$server/delivery/forgetpassword/checkemail.php";
   static const String resetpassword =
-      "$server/forgetpassword/resetpassword.php";
+      "$server/delivery/forgetpassword/resetpassword.php";
   static const String resetpassVerifycode =
-      "$server/forgetpassword/verifycode.php";
-  static const String resendverifycode = "$server/auth/resend.php";
+      "$server/delivery/forgetpassword/verifycode.php";
+  static const String resendverifycode = "$server/delivery/auth/resend.php";
 
   // Home
   static const String homepage = "$server/home.php";

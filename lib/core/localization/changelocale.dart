@@ -43,8 +43,8 @@ class LocaleController extends GetxController {
 
   @override
   void onInit() {
-    requestPermissionNotification();
-    fcmconfig();
+    // requestPermissionNotification();
+    // fcmconfig();
     requestPermissionLocation();
 
     String? sharedPrefLang = myServices.sharedPreferences.getString("lang");

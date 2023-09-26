@@ -1,5 +1,6 @@
 import 'package:delivery/core/class/statusrequest.dart';
 import 'package:delivery/core/constant/routes.dart';
+import 'package:delivery/core/functions/handlingdata.dart';
 import 'package:delivery/data/datasource/remote/auth/verifycodesignup.dart';
 import 'package:get/get.dart';
 
@@ -11,8 +12,7 @@ abstract class VerifyCodeSignUpController extends GetxController {
 class VerifyCodeSignUpControllerImp extends VerifyCodeSignUpController {
   String? email;
   StatusRequest statusRequest = StatusRequest.none;
-  VerifyCodeSignUp
- verifyCodeSignUp = VerifyCodeSignUp(Get.find());
+  VerifyCodeSignUp verifyCodeSignUp = VerifyCodeSignUp(Get.find());
 
   @override
   checkCode() {}
