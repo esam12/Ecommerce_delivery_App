@@ -37,19 +37,19 @@ class LoginControllerImp extends LoginController {
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
         if (response['status'] == "success") {
-          if (response['data']['users_approve'] == 1) {
+          if (response['data']['delivery_approve'] == 1) {
             myServices.sharedPreferences
-                .setString("id", response['data']['users_id'].toString());
+                .setString("id", response['data']['delivery_id'].toString());
             String userid = myServices.sharedPreferences.getString("id")!;
             myServices.sharedPreferences
-                .setString("username", response['data']['users_name']);
+                .setString("username", response['data']['delivery_name']);
             myServices.sharedPreferences
-                .setString("email", response['data']['users_email']);
-            myServices.sharedPreferences
-                .setString("phone", response['data']['users_phone'].toString());
+                .setString("email", response['data']['delivery_email']);
+            myServices.sharedPreferences.setString(
+                "phone", response['data']['delivery_phone'].toString());
             myServices.sharedPreferences.setString("step", "2");
-            // FirebaseMessaging.instance.subscribeToTopic("users");
-            // FirebaseMessaging.instance.subscribeToTopic("users$userid");
+            // FirebaseMessaging.instance.subscribeToTopic("delivery");
+            // FirebaseMessaging.instance.subscribeToTopic("delivery$userid");
             //data.addAll(response['data']);
             Get.offNamed(AppRoute.homepage);
           } else {

@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       translations: MyTranslation(),
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
       locale: controller.language,
       theme: controller.appTheme,
       initialBinding: MyBinding(),
